@@ -1,0 +1,78 @@
+body {
+  background: #6962ad;
+}
+
+.main-container {
+  background-image: url(form_background.jpg);
+  background-position: center;
+  height: 500px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.right-container {
+  background-color: #83c0c1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.right-container .header {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right-container .form-container {
+  background-color: #96e9c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.name-container,
+.password-container,
+.contact-container {
+  display: flex;
+  gap: 50px;
+}
+
+.name-container,
+.contact-container {
+  margin-bottom: 15px;
+}
+
+.first-name,
+.last-name,
+.email,
+.phone-number,
+.password,
+.conf-password {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.contact-container {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+input {
+  width: 300px;
+  height: 25px;
+}
