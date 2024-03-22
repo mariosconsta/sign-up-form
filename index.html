@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- GIVE CREDIT: https://unsplash.com/photos/a-snow-covered-field-with-a-mountain-range-in-the-background-sB0TYBniv84 -->
+    <script src="./form-functions.js" defer></script>
     <div class="main-container">
       <div class="left-container">
         <div class="logoContainer">
@@ -28,54 +28,68 @@
             You <em>know</em> you want to.</p>
         </div>
         <div class="form-container">
-          <h2>Let's do this!</h2>
-          <form class="sign-up-form" action="post">
-            <div class="name-container">
-              <div class="first-name">
-                <label for="first-name">First Name</label>
-                <input type="text" name="first-name" id="first-name" />
+          <form id="signUpForm" action="post">
+            <h2>Let's do this!</h2>
+            <section>
+              <div class="name-container">
+                <div class="first-name">
+                  <label for="first-name">First Name<span class="required-asterisk">*</span></label>
+                  <input type="text" name="first-name" id="first-name" maxlength="30" required placeholder=" " />
+                </div>
+                <div class="last-name">
+                  <label for="last-name">Last Name<span class="required-asterisk">*</span></label>
+                  <input type="text" name="last-name" id="last-name" maxlength="30" required placeholder=" " />
+                </div>
               </div>
-              <div class="last-name">
-                <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" id="last-name" />
+            </section>
+            <section>
+              <div class="contact-container">
+                <div class="email">
+                  <label for="usr-email">Email<span class="required-asterisk">*</span></label>
+                  <input type="email" name="usr-email" id="usr-email" pattern="(^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$)" placeholder="address@email.com" required/>
+                </div>
+                <div class="phone-number">
+                  <label for="usr-phone-number">Phone number</label>
+                  <input
+                    type="number"
+                    name="usr-phone-number"
+                    id="usr-phone-number"
+                    placeholder=" "
+                  />
+                </div>
               </div>
-            </div>
-            <div class="contact-container">
-              <div class="email">
-                <label for="usr-email">Email</label>
-                <input type="email" name="usr-email" id="usr-email" />
+            </section>
+            <section>
+              <div class="password-container">
+                <div class="password">
+                  <label for="usr-password">Password<span class="required-asterisk">*</span></label>
+                  <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" autocomplete="new-password" name="usr-password" id="usr-password" required placeholder=" " title="Password must contain 1 digit, one upper-case letter, one lower-case letter, one special character and be more than 8 characters long"/>
+                  <div class="showPassword"><input type="checkbox" id="showPasswordToggle" onclick="showPassword()"> <span>Show Password</span></div>
+                </div>
+                <div class="conf-password">
+                  <label for="usr-password-conf">Confirm Password<span class="required-asterisk">*</span></label>
+                  <input
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    type="password"
+                    name="usr-password-conf"
+                    id="usr-password-conf"
+                    autocomplete="new-password"
+                    required
+                    placeholder=" "
+                  />
+                </div>
               </div>
-              <div class="phone-number">
-                <label for="usr-phone-number">Phone number</label>
-                <input
-                  type="number"
-                  name="usr-phone-number"
-                  id="usr-phone-number"
-                />
-              </div>
-            </div>
-            <div class="password-container">
-              <div class="password">
-                <label for="usr-password">Password</label>
-                <input type="password" name="usr-password" id="usr-password" />
-              </div>
-              <div class="conf-password">
-                <label for="usr-password-conf">Confirm Password</label>
-                <input
-                  type="password"
-                  name="usr-password-conf"
-                  id="usr-password-conf"
-                />
-              </div>
-            </div>
+            </section>
+            <p class="warning-required">Fields with asterisk (<span class="required-asterisk">*</span>) are required.</p>
           </form>
-        </div>
-        <div class="bottomFormContainer">
-          <button class="createAccountBtn">Create Account</button>
-          <p>
-            Already have an account?
-            <a href="something/something" target="_blank">Log in</a>
-          </p>
+          <div class="bottomFormContainer">
+            <button type="submit" form="signUpForm" class="createAccountBtn">Create Account</button>
+            <p>
+              Already have an account?
+              <a href="something/something" target="_blank">Log in</a>
+            </p>
+              <a href="something/something" target="_blank">Forgot password?</a>
+          </div>
         </div>
       </div>
     </div>
