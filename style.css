@@ -182,7 +182,9 @@ a {
   text-decoration: none;
 }
 
-.warning-required {
+.warning-required,
+.showPassword {
   font-size: 0.8rem;
   font-weight: 600;
+  text-transform: none;
 }
